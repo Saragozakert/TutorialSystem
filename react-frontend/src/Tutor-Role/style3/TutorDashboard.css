@@ -1,0 +1,443 @@
+/* TutorDashboard.css - Consolidated Styles */
+:root {
+    --primary-ker: #FF7E5F;        /* Vibrant coral-orange */
+    --primary-light-ker: #FFA07A;   /* Light salmon */
+    --primary-lighter-ker: #FFD5C2; /* Very light peach */
+    --primary-dark-ker: #E55C2E;    /* Darker coral */
+    --primary-darker-ker: #CC4A22;  /* Deep coral for contrast */
+    --secondary-ker: #F7C59F;       /* Soft peach */
+    --accent-ker: #4ECDC4;          /* Teal for accents */
+    --dark-ker: #2D2D2D;           /* Almost black for text */
+    --light-ker: #FFF9F5;           /* Warm white background */
+    --sidebar-bg-ker: linear-gradient(180deg, var(--primary-ker) 0%, var(--primary-light-ker) 100%);
+    --card-bg-ker: rgba(255, 255, 255, 0.95);
+    --transition-ker: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --shadow-sm-ker: 0 1px 3px rgba(0, 0, 0, 0.12);
+    --shadow-md-ker: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg-ker: 0 10px 20px rgba(0, 0, 0, 0.1);
+    --border-radius-ker: 12px;
+}
+
+.dashboard-container-ker {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--light-ker);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Unified Sidebar Styles - Using -ker suffix for consistency */
+.sidebar-ker {
+    width: 250px;
+    background: linear-gradient(180deg, #cf4512 0%, #be5422 100%);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-ker);
+    position: relative;
+    z-index: 10;
+    box-shadow: 4px 0 15px rgba(255, 126, 51, 0.2);
+    border-radius: 0 var(--border-radius-ker) var(--border-radius-ker) 0;
+}
+
+.sidebar-ker.collapsed-ker {
+    width: 80px;
+}
+
+.sidebar-header-ker {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border-radius: 0 var(--border-radius-ker) 0 0;
+}
+
+.welcome-text-ker {
+    font-size: 1.1rem;
+    color: white;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.collapse-btn-ker {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: var(--transition-ker);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+}
+
+.collapse-btn-ker:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.menu-items-ker {
+    padding: 1.5rem 0;
+    flex-grow: 1;
+    border-radius: 0 0 var(--border-radius-ker) 0;
+}
+
+.menu-item-ker {
+    display: flex;
+    align-items: center;
+    padding: 0.9rem 1.8rem;
+    margin: 0.4rem 1.2rem;
+    border-radius: var(--border-radius-ker);
+    cursor: pointer;
+    transition: var(--transition-ker);
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.menu-item-ker:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(3px);
+}
+
+.menu-item-ker.active-ker {
+    background: rgba(255, 255, 255, 0.25);
+    font-weight: 600;
+    box-shadow: var(--shadow-sm-ker);
+    position: relative;
+}
+
+.menu-item-ker.active-ker::after {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 60%;
+    background: white;
+    border-radius: 2px;
+}
+
+.menu-icon-ker {
+    font-size: 1.3rem;
+    min-width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+}
+
+.menu-text-ker {
+    margin-left: 1.2rem;
+    font-weight: 500;
+    white-space: nowrap;
+    color: inherit;
+    font-size: 0.95rem;
+}
+
+/* Collapsed state styles */
+.sidebar-ker.collapsed-ker .welcome-text-ker,
+.sidebar-ker.collapsed-ker .menu-text-ker {
+    display: none;
+}
+
+.sidebar-ker.collapsed-ker .menu-item-ker {
+    justify-content: center;
+    padding: 0.9rem 0;
+    margin: 0.6rem 0.9rem;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+}
+
+.sidebar-ker.collapsed-ker .menu-item-ker:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.sidebar-ker.collapsed-ker .menu-item-ker.active-ker {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.sidebar-ker.collapsed-ker .menu-item-ker.active-ker::after {
+    display: none;
+}
+
+/* Main Content Styles */
+.main-content-ker {
+    flex-grow: 1;
+    padding: 2.5rem;
+    background-color: var(--light-ker);
+    overflow-y: auto;
+}
+
+.dashboard-header-ker {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.dashboard-title-ker {
+    font-size: 1.8rem;
+    color: var(--dark-ker);
+    font-weight: 700;
+    margin: 0;
+}
+
+.user-profile-ker {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avatar-ker {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-ker);
+}
+
+.user-info-ker h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--dark-ker);
+}
+
+.user-info-ker p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Stats Cards */
+.stats-grid-ker {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.stat-card-ker {
+    background: var(--card-bg-ker);
+    border-radius: var(--border-radius-ker);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md-ker);
+    transition: var(--transition-ker);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card-ker:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg-ker);
+}
+
+.stat-card-ker h3 {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0 0 0.5rem 0;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-card-ker .value-ker {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-dark-ker);
+    margin: 0;
+}
+
+.stat-card-ker .change-ker {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    color: #4CAF50;
+}
+
+.stat-icon-ker {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: rgba(255, 126, 95, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .sidebar-ker {
+        width: 220px;
+    }
+
+    .main-content-ker {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar-ker {
+        width: 80px;
+    }
+
+    .welcome-text-ker,
+    .menu-text-ker {
+        display: none;
+    }
+
+    .menu-item-ker {
+        justify-content: center;
+        padding: 0.9rem 0;
+        margin: 0.6rem 0.9rem;
+    }
+
+    .dashboard-header-ker {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .user-profile-ker {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 576px) {
+    .stats-grid-ker {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Add to TutorDashboard.css */
+.stat-card-ker .value-ker {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+
+  .stat-card-ker .change-ker {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  /* Specific style for rating card */
+  .stat-card-ker:nth-child(4) .value-ker {
+    color: #ffc107;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .stat-card-ker:nth-child(4) .value-ker::after {
+    content: "★";
+    margin-left: 5px;
+    font-size: 1.5rem;
+  }
+
+  /* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  /* Confirmation Modal */
+  .confirmation-modal {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden;
+    animation: modalFadeIn 0.3s ease-out;
+  }
+
+  .modal-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid #f0f2f5;
+  }
+
+  .modal-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2d3748;
+  }
+
+  .modal-body {
+    padding: 24px;
+    font-size: 1rem;
+    color: #4a5568;
+  }
+
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 16px 24px;
+    border-top: 1px solid #f0f2f5;
+  }
+
+  .cancel-btn,
+  .confirm-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .cancel-btn {
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    color: #4a5568;
+  }
+
+  .cancel-btn:hover {
+    background-color: #f7fafc;
+    border-color: #cbd5e0;
+  }
+
+  .confirm-btn {
+    background-color: #ef4444;
+    border: 1px solid #ef4444;
+    color: white;
+  }
+
+  .confirm-btn:hover {
+    background-color: #dc2626;
+    border-color: #dc2626;
+  }
+
+  @keyframes modalFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

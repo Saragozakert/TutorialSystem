@@ -1,0 +1,199 @@
+/* Magtutudlo Tutor Login Styles */
+.magtutudlo-login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #FFD5C2; /* Soft peach background */
+    background-image: radial-gradient(circle at 10% 20%, rgba(255, 214, 171, 0.8) 0%, rgba(255, 168, 123, 0.6) 90%);
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .magtutudlo-login-box {
+    width: 100%;
+    max-width: 420px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 15px 30px rgba(230, 92, 0, 0.2);
+    overflow: hidden;
+    animation: magtutudlo-fadeIn 0.6s ease-out;
+  }
+
+  @keyframes magtutudlo-fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .magtutudlo-login-header {
+    padding: 2.5rem 2rem 1.5rem;
+    text-align: center;
+    background: linear-gradient(135deg, #FF7F50, #FF9A76); /* Orange to peach gradient */
+    color: white;
+  }
+
+  .magtutudlo-logo-circle {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1rem;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .magtutudlo-logo-text {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #FF7F50;
+  }
+
+  .magtutudlo-login-title {
+    margin: 0.5rem 0 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+
+  .magtutudlo-login-subtitle {
+    margin: 0.5rem 0 0;
+    font-size: 0.95rem;
+    opacity: 0.9;
+  }
+
+  .magtutudlo-login-form {
+    padding: 2rem;
+  }
+
+  .magtutudlo-input-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .magtutudlo-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .magtutudlo-input-icon {
+    position: absolute;
+    left: 1rem;
+    color: #FF7F50;
+    font-size: 1.1rem;
+  }
+
+  .magtutudlo-input {
+    width: 100%;
+    padding: 0.9rem 1rem 0.9rem 2.8rem;
+    border: 2px solid #FFD5C2;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 213, 194, 0.1);
+  }
+
+  .magtutudlo-input:focus {
+    outline: none;
+    border-color: #FF7F50;
+    box-shadow: 0 0 0 3px rgba(255, 127, 80, 0.2);
+  }
+
+  .magtutudlo-submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(to right, #FF7F50, #FF9A76);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    box-shadow: 0 4px 15px rgba(255, 127, 80, 0.3);
+  }
+
+  .magtutudlo-submit-btn:hover {
+    background: linear-gradient(to right, #E65C2E, #FF7F50);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(230, 92, 0, 0.4);
+  }
+
+  .magtutudlo-submit-btn:disabled {
+    background: #FFD5C2;
+    transform: none;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+
+  .magtutudlo-spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: magtutudlo-spin 1s ease-in-out infinite;
+  }
+
+  @keyframes magtutudlo-spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .magtutudlo-footer {
+    padding: 1.5rem 2rem;
+    text-align: center;
+    border-top: 1px solid #FFE8DC;
+  }
+
+  .magtutudlo-footer-text {
+    margin: 0;
+    color: #666;
+    font-size: 0.95rem;
+  }
+
+  .magtutudlo-link {
+    color: #FF7F50;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .magtutudlo-link:hover {
+    color: #E65C2E;
+    text-decoration: underline;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 480px) {
+    .magtutudlo-login-container {
+      padding: 1rem;
+    }
+
+    .magtutudlo-login-header {
+      padding: 1.5rem 1rem;
+    }
+
+    .magtutudlo-login-form {
+      padding: 1.5rem;
+    }
+
+    .magtutudlo-logo-circle {
+      width: 60px;
+      height: 60px;
+    }
+
+    .magtutudlo-login-title {
+      font-size: 1.5rem;
+    }
+  }

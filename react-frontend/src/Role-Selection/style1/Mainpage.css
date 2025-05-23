@@ -1,0 +1,308 @@
+/* Mainpage.css - Modern Landing Page with guro- prefix */
+:root {
+    --guro-peach: #FF9A76;
+    --guro-peach-dark: #FF7E5F;
+    --guro-peach-light: #FFB897;
+    --guro-peach-lighter: #FFD3B6;
+    --guro-cream: #FFF8F0;
+    --guro-dark: #3A3A3A;
+    --guro-light: #FFFCF9;
+    --guro-gradient: linear-gradient(135deg, var(--guro-peach), var(--guro-peach-dark));
+    --guro-shadow: 0 8px 32px rgba(255, 126, 95, 0.15);
+    --guro-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  /* Base Styles */
+  .guro-landing-container {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--guro-dark);
+    line-height: 1.6;
+  }
+
+  /* Hero Section */
+  .guro-hero-section {
+    display: flex;
+    align-items: center;
+    min-height: 80vh;
+    padding: 4rem 2rem;
+    background: linear-gradient(
+      135deg,
+      var(--guro-cream) 0%,
+      var(--guro-peach-lighter) 100%
+    );
+    position: relative;
+    overflow: hidden;
+  }
+
+  .guro-hero-content {
+    flex: 1;
+    max-width: 600px;
+    z-index: 2;
+  }
+
+  .guro-hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .guro-hero-title span {
+    background: linear-gradient(to right, var(--guro-peach), var(--guro-peach-dark));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .guro-hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--guro-dark);
+    opacity: 0.9;
+    margin-bottom: 2.5rem;
+  }
+
+  .guro-hero-image {
+    flex: 1;
+    height: 500px;
+    background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+    border-radius: 20px;
+    box-shadow: var(--guro-shadow);
+    transform: perspective(1000px) rotateY(-15deg);
+    margin-left: 4rem;
+    z-index: 1;
+  }
+
+  /* CTA Buttons */
+  .guro-cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .guro-cta-button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--guro-transition);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .guro-primary-cta {
+    background: var(--guro-gradient);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 126, 95, 0.3);
+  }
+
+  .guro-secondary-cta {
+    background: white;
+    color: var(--guro-peach-dark);
+    border: 2px solid var(--guro-peach-dark);
+  }
+
+  .guro-cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 126, 95, 0.3);
+  }
+
+  .guro-large-cta {
+    padding: 1.2rem 3rem;
+    font-size: 1.2rem;
+  }
+
+  .guro-button-icon {
+    font-size: 1.2rem;
+  }
+
+  /* Features Section */
+  .guro-features-section {
+    padding: 6rem 2rem;
+    background: white;
+  }
+
+  .guro-section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    font-weight: 700;
+    color: var(--guro-dark);
+  }
+
+  .guro-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .guro-feature-card {
+    background: var(--guro-light);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: var(--guro-transition);
+    border: 1px solid rgba(255, 214, 186, 0.4);
+  }
+
+  .guro-feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--guro-shadow);
+  }
+
+  .guro-feature-icon {
+    font-size: 2.5rem;
+    color: var(--guro-peach-dark);
+    margin-bottom: 1.5rem;
+  }
+
+  .guro-feature-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--guro-dark);
+  }
+
+  .guro-feature-card p {
+    color: var(--guro-dark);
+    opacity: 0.8;
+  }
+
+  /* Testimonials Section */
+  .guro-testimonials-section {
+    padding: 6rem 2rem;
+    background: var(--guro-cream);
+  }
+
+  .guro-testimonials-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .guro-testimonial-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: var(--guro-shadow);
+    position: relative;
+  }
+
+  .guro-testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    font-size: 5rem;
+    color: var(--guro-peach-light);
+    opacity: 0.2;
+    font-family: serif;
+    line-height: 1;
+  }
+
+  .guro-testimonial-content {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .guro-testimonial-author {
+    font-weight: 600;
+    color: var(--guro-peach-dark);
+  }
+
+  /* Final CTA */
+  .guro-final-cta {
+    padding: 6rem 2rem;
+    text-align: center;
+    background: linear-gradient(
+      135deg,
+      var(--guro-peach) 0%,
+      var(--guro-peach-dark) 100%
+    );
+    color: white;
+  }
+
+  .guro-final-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Decorative Elements */
+  .guro-decorative-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 154, 118, 0.1);
+    filter: blur(40px);
+    z-index: 0;
+  }
+
+  .guro-shape-1 {
+    width: 400px;
+    height: 400px;
+    top: -100px;
+    right: -100px;
+  }
+
+  .guro-shape-2 {
+    width: 300px;
+    height: 300px;
+    bottom: -50px;
+    left: -50px;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .guro-hero-section {
+      flex-direction: column;
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+
+    .guro-hero-image {
+      margin: 3rem auto 0;
+      width: 100%;
+      max-width: 600px;
+      transform: none;
+    }
+
+    .guro-cta-buttons {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .guro-hero-title {
+      font-size: 2.5rem;
+    }
+
+    .guro-hero-subtitle {
+      font-size: 1.2rem;
+    }
+
+    .guro-section-title {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .guro-cta-buttons {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .guro-hero-title {
+      font-size: 2rem;
+    }
+
+    .guro-hero-subtitle {
+      font-size: 1rem;
+    }
+  }
