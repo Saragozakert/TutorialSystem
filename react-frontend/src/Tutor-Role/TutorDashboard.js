@@ -15,6 +15,8 @@ import { useNavigate } from "react-router-dom";
 import logo from "./images/logo1.jpg";
 import axios from "axios";
 import "./style3/TutorDashboard.css";
+import Calendar from "./Calendar"; // Adjust the path as needed
+
 
 
 function TutorDashboard() {
@@ -267,6 +269,7 @@ function TutorDashboard() {
             </div>
           ))}
         </div>
+        <Calendar />
       </div>
       {showLogoutConfirmation && (
         <div className="modal-overlay">
